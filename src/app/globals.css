@@ -2,26 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/*--------------------*
+*                     *
+* --- Main Styles --- *
+*                     *
+*---------------------*/   
+
+.border-\[\#3d3d3d\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(61 61 61/var(--tw-border-opacity))
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.bg-\[\#2c2c2c\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(44 44 44/var(--tw-bg-opacity))
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Custom */
+.bg-custom-dark-gray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 31 35/var(--tw-bg-opacity))
+}
+
+.bg-gray-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(44 44 44/var(--tw-bg-opacity))
+}
+
+.bg-violet {
+  --tw-bg-opacity: 1;
+  background-color: rgb(176 102 243/var(--tw-bg-opacity))
+}
+
+.text-violet {
+  --tw-text-opacity: 1;
+  color: rgb(176 102 243/var(--tw-text-opacity));
+}
+
+.gradient {
+  background-image: linear-gradient(278deg,#b066f3,#c20dc5)
+}
+
+/*--------------------*
+*                     *
+* ---- Scrollbar ---- *
+*                     *
+*---------------------*/                    
+
+.custom-scrollbar {
+  scrollbar-width: auto
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 16px;
+  height: 16px
+}
+
+.custom-scrollbar {
+  --scrollbar-track: initial;
+  --scrollbar-thumb: initial;
+  --scrollbar-corner: initial;
+  --scrollbar-track-hover: var(--scrollbar-track);
+  --scrollbar-thumb-hover: var(--scrollbar-thumb);
+  --scrollbar-corner-hover: var(--scrollbar-corner);
+  --scrollbar-track-active: var(--scrollbar-track-hover);
+  --scrollbar-thumb-active: var(--scrollbar-thumb-hover);
+  --scrollbar-corner-active: var(--scrollbar-corner-hover);
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  overflow: overlay
+}
+
+.custom-scrollbar.overflow-x-hidden {
+  overflow-x: hidden
+}
+
+.custom-scrollbar.overflow-y-hidden {
+  overflow-y: hidden
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track)
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb)
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background-color: var(--scrollbar-corner)
+}
+
+.custom-scrollbar::-webkit-scrollbar-track:hover {
+  background-color: var(--scrollbar-track-hover)
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover)
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner:hover {
+  background-color: var(--scrollbar-corner-hover)
+}
+
+.custom-scrollbar::-webkit-scrollbar-track:active {
+  background-color: var(--scrollbar-track-active)
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-thumb-active)
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner:active {
+  background-color: var(--scrollbar-corner-active)
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px
+}
+
+.custom-scrollbar {
+  --scrollbar-track: #2c2c2c;
+  --scrollbar-thumb: #b066f3
+}
+
+/*--------------------*
+*                     *
+* ------ Mapbox ----- *
+*                     *
+*---------------------*/
+
+.mapboxgl-popup-content {
+  background: #201F23!important;
+  border-radius: 5%!important;
+}
+
+.mapboxgl-popup-close-button {
+  right: 10px!important;
+  top: 5px!important;
+  color: #fff;
+  transition: ease-in-out 100ms;
+  transform: scale(150%);
+}
+
+.mapboxgl-popup-close-button:hover {
+  color: #cc0000;
+  transition: ease-in-out 100ms;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,  .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-top-color: #201F23!important;
+  border-bottom-color: #201F23!important;
+}
+
+.mapboxgl-ctrl-top-right {
+  top: 90vh!important;
+  transform: scale(1.5);
+  right: 10px!important;
 }
